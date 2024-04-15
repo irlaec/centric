@@ -1,4 +1,3 @@
-<!-- App.vue -->
 <template>
   <div id="app">
     <image-list :items="items" @item-selected="handleItemSelected"></image-list>
@@ -7,23 +6,34 @@
 </template>
 
 <script>
+const CAT_API_URL = 'https://api.thecatapi.com/v1/images/search?limit=10';
 export default {
   name: 'App',
   data() {
     return {
-      items: [
-        { id: 1, name: 'Item 1', image: 'item1.jpg' },
-        { id: 2, name: 'Item 2', image: 'item2.jpg' },
-        { id: 3, name: 'Item 3', image: 'item3.jpg' }
-      ],
+      items: [],
       selectedItem: null
     }
   },
+  mounted() {
+    this.fetchCatImages();
+  },
   methods: {
+    async fetchCatImages() {
+      try {
+        const response = await fetch(CAT_API_URL);
+        const data = await response.json();
+        this.items = data.map((item, index) => ({
+          id: item.id,
+          name: `Cat ${index + 1}`,
+          image: item.url
+        }));
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
     handleItemSelected(item) {
-      console.log('Selected item:', item)
       this.selectedItem = item
-      console.log('Selected item:', item)
     }
   }
 }

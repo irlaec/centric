@@ -1,4 +1,3 @@
-<!-- ItemClickable.vue -->
 <template>
   <div class="image-list-item" @click="handleItemClick">
     <div class="item-name">{{ item.name }}</div>

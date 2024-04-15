@@ -1,4 +1,3 @@
-<!-- ItemDetail.vue -->
 <template>
   <div class="image-preview" v-if="selectedItem">
     <h2>{{ selectedItem.name }}</h2>

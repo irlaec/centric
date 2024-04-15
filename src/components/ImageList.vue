@@ -1,4 +1,3 @@
-<!-- ItemList.vue -->
 <template>
   <div class="image-list">
     <div v-for="(item, index) in items" :key="index">

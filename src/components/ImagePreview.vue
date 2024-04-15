@@ -1,11 +1,15 @@
 <template>
   <div class="image-preview" v-if="selectedItem">
-    <h2>{{ selectedItem.name }}</h2>
-    <img :src="selectedItem.image" alt="Item Image" class="item-image" />
-    <p>Number of Clicks: {{ selectedItem.clicks }}</p>
+    <v-card>
+      <v-card-title>{{ selectedItem.name }}</v-card-title>
+      <v-img :src="selectedItem.image" class="bg-grey-lighten-2" :max-height="500" cover></v-img>
+      <v-card-text> Number of Clicks: {{ selectedItem.clicks }} </v-card-text>
+    </v-card>
   </div>
-  <div v-else>
-    <p>Select an item to see details.</p>
+  <div v-else class="image-preview">
+    <v-card>
+      <v-card-text> Select an item to see the image </v-card-text>
+    </v-card>
   </div>
 </template>
 
@@ -19,15 +23,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.image-preview {
-  padding: 20px;
-}
-
-.item-image {
-  width: 200px;
-  height: 200px;
-  cursor: pointer;
-}
-</style>

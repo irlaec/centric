@@ -1,6 +1,8 @@
 <template>
   <div class="image-list-item" @click="handleItemClick">
-    <div class="item-name">{{ item.name }}</div>
+    <v-col>
+      <v-btn size="x-large" block>{{ item.name }}</v-btn>
+    </v-col>
   </div>
 </template>
 
@@ -25,27 +27,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.image-list-item {
-  cursor: pointer;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-}
-
-.image-list-item:hover {
-  background-color: #e6e6e6;
-}
-
-.item-image {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 5px;
-}
-
-.item-name {
-  text-align: center;
-}
-</style>

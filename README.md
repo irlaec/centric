@@ -1,26 +1,37 @@
-# centric
+# Centric
 
 
-## Project Setup
+## Exercise 1: Image-Clicker
 
+### Install dependencies
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Run dev server
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
 
+## Exercise 2: Coupons
+### Create and activate virtual environment
 ```sh
-npm run build
+python3 -m venv venv
+source venv/bin/activate
 ```
 
-### Lint with [ESLint](https://eslint.org/)
-
+### Install dependencies
 ```sh
-npm run lint
+pip install -r requirements.txt
 ```
+
+### Run the script
+```sh
+cd src
+python main.py
+```
+
+### Results
+Available in src/results/ as json and images.
